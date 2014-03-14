@@ -1,0 +1,11 @@
+{
+  "name": "loadmodule",
+  "description": "Loads plugin dependencies and initializes plugin if necessary DOM element is available",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-minified": "~0.0.6",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-browser-sync": "~0.3.7"
+  }
+}
