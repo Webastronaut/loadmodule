@@ -1,3 +1,6 @@
 bower_components/
 node_modules/
 index.html
+rsvp/
+basket.js/
+.idea/
