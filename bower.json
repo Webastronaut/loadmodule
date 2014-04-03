@@ -1,0 +1,27 @@
+{
+  "name": "loadmodule",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Webastronaut/loadmodule",
+  "authors": [
+    "Philip Morkisch <pm@webastronaut.org>"
+  ],
+  "description": "Dependency loader",
+  "main": "jquery.loadmodule.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fancybox": "~2.1.5",
+    "rsvp": "~3.0.6",
+    "basket.js": "~0.4.0"
+  }
+}

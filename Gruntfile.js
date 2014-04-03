@@ -26,12 +26,12 @@ module.exports = function(grunt) {
         browser_sync: {
             files: {
                 src : [
-                    "**/*.js",
+                    "jquery.loadmodule.js",
                     "*.html"
                 ],
             },
             options: {
-                watchTask : false,
+                watchTask : true,
                 host: "localhost",
                 server: {
                     baseDir: ""

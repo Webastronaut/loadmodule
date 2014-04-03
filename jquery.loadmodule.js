@@ -1,5 +1,5 @@
 ;(function($) {
-	$.fn.loadModule = function(dependencies, callback) {
+	$.fn.loadModule = function(dependencies, callback, unique) {
 		var self = {
 				$that : $(this)
 			};
@@ -13,7 +13,7 @@
 		}
 
  		self.getDependencies = function(arr) {
-			var defer;
+			var defer, basketOptions = {};
 
 			if(arr.length === 0) {
 				callback.call(self.$that, $);
@@ -25,15 +25,20 @@
 						defer = $.when($('<link>').prependTo('head')
 							.attr({
 								'type' : 'text/css',
-								'rel' : 'stylesheet',
-								'href' : arr[0]
-							}));
+								'rel' : 'stylesheet'
+							}).attr('href', arr[0]));
 					} else {
 						defer = $.Deferred();
 						defer.resolve();
 					}
 				} else {
-					defer = basket.require({ url : arr[0] });
+					basketOptions.url = arr[0];
+					
+					if(!!unique) {
+						basketOptions.unique = unique;
+					}
+				
+					defer = basket.require(basketOptions);
 				}
 
 				if($.inArray(arr[0], window.loadedDependencies) < 0) {
