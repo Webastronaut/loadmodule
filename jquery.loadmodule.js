@@ -21,17 +21,16 @@
 				return;
 			} else {
 				if(arr[0].indexOf('css') !== -1) {
+					defer = $.Deferred();
 					if($.inArray(arr[0], window.loadedDependencies) < 0) {
-						defer = $.when($('<link>').prependTo('head')
+						$('<link>').prependTo('head')
 							.attr({
 								'type' : 'text/css',
-								'rel' : 'stylesheet',
-								'href' : arr[0]
-							}));
-					} else {
-						defer = $.Deferred();
-						defer.resolve();
+								'rel' : 'stylesheet'
+							}).attr('href', arr[0]);
 					}
+
+					defer.resolve();
 				} else {
 					defer = basket.require({ url : arr[0] });
 				}
