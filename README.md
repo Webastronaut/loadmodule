@@ -9,14 +9,22 @@ Needs [basket.js](https://github.com/addyosmani/basket.js) and [rsvp.js](https:/
 
 ```JavaScript
 $(function() {
-  // Only if .fancybox is available loadModule will load the dependencies and invoke the callback
+
+  /** Only if .fancybox is available loadModule will load the dependencies and invoke the callback
+   * 
+   * @param {array} Dependencies - JS or CSS files
+   * @param {function} Callback - Gets invoked when all dependencies are loaded
+   * @param {string} Unique - Used for cache busting; if you want loadmodule to fetch
+   * the desired script from the server rather than from the local storage change this value
+   */
 	$('.fancybox').loadModule([
 		'path/to/fancybox/jquery.fancybox.css', 
 		'path/to/fancybox/jquery.fancybox.pack.js'
 	],
 	function() {
 		$(this).fancybox();
-	});
+	}, '1.0');
+	
 });
 ```
 
