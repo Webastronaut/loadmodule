@@ -28,8 +28,4 @@ $(function() {
 });
 ```
 
-## TODOs
-
-* Combine check if element is in DOM AND if its in viewport, if not loading is not necessary as long as its invisible
-
 The code is available under MIT Licence, so do whatever you want to do with it.
