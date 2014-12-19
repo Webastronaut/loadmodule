@@ -39,7 +39,7 @@
 				return;
 			} else {
 				// If we have a CSS file to load create a new link element in the header and put it to the top
-				if(arr[0].indexOf('css') !== -1) {
+				if(arr[0].indexOf('.css') !== -1) {
 					if($.inArray(arr[0], window.loadedDependencies) < 0) {
 						defer = $.when($('<link>').prependTo('head')
 							.attr({
